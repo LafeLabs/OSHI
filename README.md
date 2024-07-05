@@ -2,6 +2,8 @@
 # [Open Source Hardware Instrument(OSHI)](https://github.com/lafelabs/OSHI)
 
  - [qrcode/](qrcode/)
+ - [readme set reader](readme/readme-reader.html)
+ - [readme set editor](readme/readme-editor.html)
  - [readme/](readme/)
  - [localhost/](http://localhost/)
 

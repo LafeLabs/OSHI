@@ -56,7 +56,7 @@ loadscroll("README.md");
 
 document.getElementById("title").innerHTML = filename;
 
-
+newscroll = "";
 function loadscroll(scrollname){
     filename = scrollname;
 
@@ -66,7 +66,9 @@ function loadscroll(scrollname){
     httpc666.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             scroll = this.responseText;
-            rawhtml = converter.makeHtml(scroll);
+            newscroll = scroll.replace(/]\(images/g, "](../" + currentdir + "/images");
+
+            rawhtml = converter.makeHtml(newscroll);
             document.getElementById("scrollscroll").innerHTML = rawhtml;
 
             			MathJax.Hub.Typeset();//tell Mathjax to update the math
@@ -79,6 +81,7 @@ function loadscroll(scrollname){
 }
 
 
+currentdir = "readme";
 
 readmefiles = [];
 var httpc9 = new XMLHttpRequest();
@@ -92,6 +95,7 @@ var httpc9 = new XMLHttpRequest();
                 newdiv.className = "readmelink";
                 document.getElementById("dirscroll").appendChild(newdiv);
                 newdiv.onclick = function(){
+                    currentdir = this.innerHTML.split("/README.md")[0].split("../")[1];
                     loadscroll(this.innerHTML);
                     document.getElementById("title").innerHTML = this.innerHTML;
 
