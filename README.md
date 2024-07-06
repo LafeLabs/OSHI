@@ -4,7 +4,8 @@
  - [qrcode/](qrcode/)
  - [readme set reader](readme/readme-reader.html)
  - [readme set editor](readme/readme-editor.html)
- - [readme/](readme/)
+ - [readme set readme](readme/)
+ - [3d printed files](3dprint/)
  - [localhost/](http://localhost/)
 
 
